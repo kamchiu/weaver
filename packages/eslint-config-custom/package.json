@@ -1,9 +1,9 @@
 {
   "name": "eslint-config-custom",
-  "version": "0.0.0",
-  "main": "index.js",
-  "license": "MIT",
   "type": "module",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "index.js",
   "devDependencies": {
     "@antfu/eslint-config": "2.1.0",
     "@unocss/eslint-config": "0.57.7",

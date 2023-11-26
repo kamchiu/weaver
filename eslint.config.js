@@ -1,15 +1,12 @@
-// @ts-check
-const { defineConfig } = require('eslint-define-config')
+const antfu = require('@antfu/eslint-config').default
 
 const apps = 'apps/'
 const nuxtPath = `${apps}/nuxt`
 
-module.exports = defineConfig({
+module.exports = antfu({
   extends: ['custom'],
   root: true,
   overrides: [
-    // Welche Regeln brauchen wir?
-
     // Package Overrides
     {
       files: ['./packages/**/*.{js,ts,vue}'],

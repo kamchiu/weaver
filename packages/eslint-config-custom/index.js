@@ -1,38 +1,34 @@
-// @ts-check
-const { defineConfig } = require('eslint-define-config')
+import antfu from "@antfu/eslint-config"
 
-module.exports = defineConfig({
-  extends: [
-    '@antfu',
-    '@unocss',
-  ],
+export default await antfu({
+  ignores: ['**/*.json', 'dist', 'node_modules', '.turbo', '.nuxt', 'public', '.output', '!.storybook'],
   rules: {
     'comma-dangle': [
       'error',
       'always-multiline',
     ],
-    // 'import/order': [
-    //   'error',
-    //   {
-    //     'newlines-between': 'always',
-    //     pathGroupsExcludedImportTypes: ['vue'],
-    //     groups: [
-    //       'builtin',
-    //       'external',
-    //       'internal',
-    //       'parent',
-    //       'sibling',
-    //       'index',
-    //     ],
-    //     pathGroups: [
-    //       {
-    //         pattern: '@ui/**',
-    //         group: 'internal',
-    //         position: 'before',
-    //       },
-    //     ],
-    //   },
-    // ],
+    'import/order': [
+      'error',
+      {
+        'newlines-between': 'always',
+        'pathGroupsExcludedImportTypes': ['vue'],
+        'groups': [
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
+        ],
+        'pathGroups': [
+          {
+            pattern: '@ui/**',
+            group: 'internal',
+            position: 'before',
+          },
+        ],
+      },
+    ],
     'vue/component-tags-order': [
       'error',
       {
@@ -41,5 +37,4 @@ module.exports = defineConfig({
     ],
     'vue/no-multiple-template-root': 'off',
   },
-  ignorePatterns: ['**/*.json', 'dist', 'node_modules', '.turbo', '.nuxt', 'public', '.output', '!.storybook'],
-})
+});

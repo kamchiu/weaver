@@ -3,6 +3,7 @@ import type { UnocssNuxtOptions } from '@unocss/nuxt'
 import type { PresetWindOptions, Theme } from '@unocss/preset-wind'
 import { presetIcons } from '@unocss/preset-icons'
 import { presetWind, transformerDirectives, transformerVariantGroup } from 'unocss'
+
 import { rules } from './rules'
 import { theme } from './theme'
 

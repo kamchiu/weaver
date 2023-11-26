@@ -1,4 +1,5 @@
 import type { Rule } from '@unocss/core'
+
 import { customRules } from './customRules'
 
 // import { safeArea } from './safe-area'

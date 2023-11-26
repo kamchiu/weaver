@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import IconSpinner from '@ui/components/icon/Spinner.vue'
+
 import type { ButtonIconSize, ButtonType } from './Button.model'
 import { ButtonIconSizes, ButtonTypes } from './Button.model'
 
@@ -17,7 +18,7 @@ withDefaults(defineProps<{
 })
 
 defineEmits<{
-  (e: 'click'): void
+  click: [e: MouseEvent]
 }>()
 
 const classes = {
@@ -39,7 +40,7 @@ const iconSizeClasses = {
     class="overflow-ellipsis mb-0.5 h-3 flex cursor-pointer items-center justify-center overflow-hidden whitespace-nowrap p-4 text-lg transition-opacity focus:(outline-none ring)"
     :class="[{ 'opacity-20 cursor-not-allowed': disabled }, classes[type]]"
     :disabled="disabled"
-    @click="$emit('click')"
+    @click="$emit('click', $event)"
   >
     <IconSpinner v-if="loading" class="h-2 w-2" />
     <div v-else class="flex items-center justify-center gap-0.25">

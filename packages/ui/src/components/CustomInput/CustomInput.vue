@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 
-defineProps({
+const props = defineProps({
   foo: {
     type: String,
     required: true,
@@ -12,9 +12,11 @@ defineProps({
   },
 })
 
-const textInput = ref('')
+defineEmits([])
+
+const textInput = ref(props.foo)
 </script>
 
 <template>
-  <input v-model="textInput" type="text">
+  <input v-model="textInput" type="text" class="border border-gray-50">
 </template>

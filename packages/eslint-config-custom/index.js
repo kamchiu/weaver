@@ -35,6 +35,5 @@ export default await antfu({
         order: ['script', 'template', 'style'],
       },
     ],
-    'vue/no-multiple-template-root': 'off',
   },
 });

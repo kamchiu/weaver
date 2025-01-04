@@ -14,9 +14,9 @@ const props = defineProps({
 
 defineEmits([])
 
-const textInput = ref(props.foo)
+const search = ref(props.foo)
 </script>
 
 <template>
-  <input v-model="textInput" type="text" class="border border-gray-50">
+  <input v-model="search" type="text" class="border border-gray-50">
 </template>

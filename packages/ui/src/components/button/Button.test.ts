@@ -8,8 +8,8 @@ describe('test Button Button', () => {
   expect(Button).toBeTruthy()
   const wrapper = mount(Button, {
     props: {
-      disabled: false,
       loading: false,
+      disabled: false,
       prefix: 'first',
       iconMobile: false,
     },

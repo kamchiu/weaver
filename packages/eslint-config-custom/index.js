@@ -1,4 +1,4 @@
-import antfu from "@antfu/eslint-config"
+import antfu from '@antfu/eslint-config'
 
 export default await antfu({
   ignores: ['**/*.json', 'dist', 'node_modules', '.turbo', '.nuxt', 'public', '.output', '!.storybook'],
@@ -36,4 +36,4 @@ export default await antfu({
       },
     ],
   },
-});
+})

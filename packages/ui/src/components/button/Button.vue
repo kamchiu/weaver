@@ -4,28 +4,35 @@ import IconSpinner from '@ui/components/icon/Spinner.vue'
 import type { ButtonIconSize, ButtonType } from './Button.model'
 import { ButtonIconSizes, ButtonTypes } from './Button.model'
 
-withDefaults(defineProps<{
-  prefix: string
-  type?: ButtonType
-  iconSize?: ButtonIconSize
-  loading?: boolean
-  disabled?: boolean
-}>(), {
-  type: () => ButtonTypes.Primary,
-  iconSize: () => ButtonIconSizes.Normal,
-  loading: false,
-  disabled: false,
-})
+withDefaults(
+  defineProps<{
+    prefix: string
+    type?: ButtonType
+    iconSize?: ButtonIconSize
+    loading?: boolean
+    disabled?: boolean
+  }>(),
+  {
+    type: () => ButtonTypes.Primary,
+    iconSize: () => ButtonIconSizes.Normal,
+    loading: false,
+    disabled: false,
+  },
+)
 
 defineEmits<{
   click: [e: MouseEvent]
 }>()
 
 const classes = {
-  primary: 'bg-primary text-white w-full border-primary border-2 border-solid rounded-md active:(bg-primary-700 border-primary-700)',
-  secondary: 'bg-transparent text-primary w-full border-primary border-2 border-solid rounded-md active:(text-primary-700 border-primary-700)',
-  tertiary: 'bg-white text-normal w-full border-2 border-gray-400 border-solid rounded-full',
-  quaternary: 'bg-white text-normal border-2 border-gray border-solid rounded-full shadow-lg',
+  primary:
+    'bg-primary text-white w-full border-primary border-2 border-solid rounded-md active:(bg-primary-700 border-primary-700)',
+  secondary:
+    'bg-transparent text-primary w-full border-primary border-2 border-solid rounded-md active:(text-primary-700 border-primary-700)',
+  tertiary:
+    'bg-white text-normal w-full border-2 border-gray-400 border-solid rounded-full',
+  quaternary:
+    'bg-white text-normal border-2 border-gray border-solid rounded-full shadow-lg',
 }
 
 const iconSizeClasses = {
@@ -43,6 +50,7 @@ const iconSizeClasses = {
     @click="$emit('click', $event)"
   >
     <IconSpinner v-if="loading" class="h-2 w-2" />
+
     <div v-else class="flex items-center justify-center gap-0.25">
       <div v-if="$slots.icon" :class="iconSizeClasses[iconSize]">
         <slot name="icon" />
